@@ -3,7 +3,7 @@ const questions = [
       question: "Quelle est la capitale de la France ?",
       options: ["Paris", "Lyon", "Marseille", "Bordeaux"],
       correctAnswer: "Paris",
-      image:"src/assets/img/MADE.PNG"
+      image:"src/assets/img/MADE44.PNG"
     },
     {
       question: "Qui a peint la Joconde ?",
