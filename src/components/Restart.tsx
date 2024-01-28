@@ -17,4 +17,3 @@ const Restart = ({ onRestart }: RestartProps) => {
 };
 
 export default Restart;
-

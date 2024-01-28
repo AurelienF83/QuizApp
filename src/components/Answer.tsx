@@ -12,10 +12,16 @@ interface AnswerProps {
 const Answer = ({ question, givenAnswer, onPrevious, onNext }: AnswerProps) => {
   return (
     <div>
-      <p><strong>Question:</strong> {question.question}</p>
-      <p><strong>Votre réponse:</strong> {givenAnswer}</p>
-      <p><strong>Bonne réponse:</strong> {question.correctAnswer}</p>
-      <div>
+      <p>
+        <strong>Question:</strong> {question.question}
+      </p>
+      <p>
+        <strong>Votre réponse:</strong> {givenAnswer}
+      </p>
+      <p>
+        <strong>Bonne réponse:</strong> {question.correctAnswer}
+      </p>
+      <div className=" flex mt-4 justify-between">
         <Button onClick={onPrevious}>Previous</Button>
         <Button onClick={onNext}>Next</Button>
       </div>
@@ -24,5 +30,3 @@ const Answer = ({ question, givenAnswer, onPrevious, onNext }: AnswerProps) => {
 };
 
 export default Answer;
-
-

@@ -68,16 +68,8 @@ const App = () => {
   return (
     <div className="bg-primary min-h-screen flex justify-center items-center">
       <div className="bg-secondary p-8 rounded-2xl w-1/2 flex flex-col">
-        {!isQuizFinished && (
-          <Timer
-            key={currentQuestion}
-            duration={50}
-            onTimeUp={handleAnswerSubmission}
-          />
-        )}
-        <h1 className="text-2xl font-bold text-center my-4">
-          QCM TAC TPU-1 IP
-        </h1>
+        {!isQuizFinished && <Timer key={currentQuestion} duration={50} onTimeUp={handleAnswerSubmission} />}
+        <h1 className="text-2xl font-bold text-center my-4">QCM TAC TPU-1 IP</h1>
 
         {!isQuizFinished ? (
           <div className="flex-grow">
@@ -89,27 +81,17 @@ const App = () => {
               />
             </div>
             <div className="text-center mt-8">
-              <Button
-                variant="default"
-                className="font-bold py-2 px-4 "
-                onClick={handleAnswerSubmission}
-              >
+              <Button variant="default" className="font-bold py-2 px-4 " onClick={handleAnswerSubmission}>
                 Valider
               </Button>
             </div>
           </div>
         ) : (
-          <div className="text-center flex-grow">
-            Quiz terminé ! Votre score : {score}
-          </div>
+          <div className="text-center flex-grow">Quiz terminé ! Votre score : {score}</div>
         )}
 
-        <div className="mt-4 text-center">
-          {!isQuizFinished ? `${currentQuestion + 1}/${questions.length}` : ""}
-        </div>
-        {!isQuizFinished && (
-          <ProgressBar current={currentQuestion + 1} total={questions.length} />
-        )}
+        <div className="mt-4 text-center">{!isQuizFinished ? `${currentQuestion + 1}/${questions.length}` : ""}</div>
+        {!isQuizFinished && <ProgressBar current={currentQuestion + 1} total={questions.length} />}
 
         {isQuizFinished && (
           <>
