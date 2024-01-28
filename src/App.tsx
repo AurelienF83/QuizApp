@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import Question from './components/Question';
-import Timer from './components/Timer';
-import ProgressBar from './components/ProgressBar';
-import Answer from './components/Answer';
-import Restart from './components/Restart';
-import questions from './data/question';
+import { useState } from "react";
+import Question from "./components/Question";
+import Timer from "./components/Timer";
+import ProgressBar from "./components/ProgressBar";
+import Answer from "./components/Answer";
+import Restart from "./components/Restart";
+import questions from "./data/question";
 import { Button } from "@/components/ui/button";
 
 const App = () => {
@@ -68,16 +68,24 @@ const App = () => {
   return (
     <div className="bg-primary min-h-screen flex justify-center items-center">
       <div className="bg-secondary p-8 rounded-2xl w-1/2 flex flex-col">
-        {!isQuizFinished && <Timer key={currentQuestion} duration={50} onTimeUp={handleAnswerSubmission} />}
-        <h1 className="text-2xl font-bold text-center my-4">QCM TAC TPU-1 IP</h1>
-        
+        {!isQuizFinished && (
+          <Timer
+            key={currentQuestion}
+            duration={50}
+            onTimeUp={handleAnswerSubmission}
+          />
+        )}
+        <h1 className="text-2xl font-bold text-center my-4">
+          QCM TAC TPU-1 IP
+        </h1>
+
         {!isQuizFinished ? (
           <div className="flex-grow">
             <div className="text-center">
-              <Question 
-                data={questions[currentQuestion]} 
-                setSelectedAnswer={setSelectedAnswer} 
-                selectedAnswer={selectedAnswer} 
+              <Question
+                data={questions[currentQuestion]}
+                setSelectedAnswer={setSelectedAnswer}
+                selectedAnswer={selectedAnswer}
               />
             </div>
             <div className="text-center mt-8">
@@ -91,14 +99,18 @@ const App = () => {
             </div>
           </div>
         ) : (
-          <div className="text-center flex-grow">Quiz terminé ! Votre score : {score}</div>
+          <div className="text-center flex-grow">
+            Quiz terminé ! Votre score : {score}
+          </div>
         )}
 
         <div className="mt-4 text-center">
-          {!isQuizFinished ? `${currentQuestion + 1}/${questions.length}` : ''}
+          {!isQuizFinished ? `${currentQuestion + 1}/${questions.length}` : ""}
         </div>
-        {!isQuizFinished && <ProgressBar current={currentQuestion + 1} total={questions.length} />}
-        
+        {!isQuizFinished && (
+          <ProgressBar current={currentQuestion + 1} total={questions.length} />
+        )}
+
         {isQuizFinished && (
           <>
             <Restart onRestart={restartQuiz} />
@@ -125,4 +137,3 @@ const App = () => {
 };
 
 export default App;
-
