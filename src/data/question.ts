@@ -1,29 +1,31 @@
 const questions = [
     {
-      question: "Quelle est la capitale de la France ?",
-      options: ["Paris", "Lyon", "Marseille", "Bordeaux"],
-      correctAnswer: "Paris",
+      question: "Configurez l'adresse IP de votre PC afin de pouvoir vous connecter à une TAC TPU-1",
+      type: "ip",
+      correctAnswer: "172.16.6.x",
+      image:"src/assets/img/MADE44.PNG",
+      exclude: [3],
+    },
+    {
+      question: "Veuillez saisir l'adresse IP pour se connecter à une TAC TPU-1",
+      type: "ip",
+      correctAnswer: "172.16.6.20",
       image:"src/assets/img/MADE44.PNG"
     },
     {
-      question: "Qui a peint la Joconde ?",
-      options: ["Vincent Van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
-      correctAnswer: "Leonardo da Vinci",
+      question: "Sur quelles bornes d'IPTU peut-on câbler les Entrées",
+      options: ["1-2 et 3-4", "5-6 et 7-8", "9-10 et 11-12", "9-11 et 13-14"],
+      correctAnswer: "1-2 et 3-4",
     },
     {
-      question: "Quel est l'élément chimique le plus léger ?",
-      options: ["Oxygène", "Hydrogène", "Hélium", "Carbone"],
-      correctAnswer: "Hydrogène",
+      question: "Sur quelles bornes d'IPTU peut-on câbler les Sorties",
+      options: ["1-2 et 3-4", "5-6 et 7-8", "9-10 et 11-12", "9-11 et 13-14"],
+      correctAnswer: "5-6 et 7-8",
     },
     {
-      question: "Qui a écrit 'Hamlet' ?",
-      options: ["William Shakespeare", "Charles Dickens", "Jane Austen", "Mark Twain"],
-      correctAnswer: "William Shakespeare",
-    },
-    {
-      question: "Quelle est la plus longue rivière du monde ?",
-      options: ["Le Nil", "L'Amazone", "Le Yangtsé", "Le Mississippi"],
-      correctAnswer: "L'Amazone",
+      question: "Sur quelles bornes d'IPTU peut-on câbler les Alarmes en configuration NO",
+      options: ["1-2 et 3-4", "5-6 et 7-8", "9-11 et 12-14", "10-11 et 13-14"],
+      correctAnswer: "9-11 et 12-14",
     },
     {
       question: "Quel est le plus grand océan du monde ?",

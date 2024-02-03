@@ -8,7 +8,7 @@ const Restart = ({ onRestart }: RestartProps) => {
   return (
     // Bouton qui, lorsqu'il est cliqué, déclenche la fonction onRestart.
     <button
-      className="bg-primary hover:bg-secondary text-white hover:text-primary font-bold py-2 px-4 rounded mt-4"
+      className="bg-primary hover:bg-gray-700 text-secondary font-bold py-2 px-4 rounded mt-4"
       onClick={onRestart}
     >
       Recommencer

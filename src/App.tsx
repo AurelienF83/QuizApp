@@ -6,6 +6,9 @@ import Answer from "./components/Answer";
 import Restart from "./components/Restart";
 import questions from "./data/question";
 import { Button } from "@/components/ui/button";
+import { isValidIP } from "./data/utils";
+import logo from "./assets/img/MADE44.png";
+import trophy from "./assets/img/quiz.png";
 
 const App = () => {
   // Déclaration des états avec useState.
@@ -19,7 +22,18 @@ const App = () => {
 
   // logique pour gérer la soumission de réponse
   const handleAnswerSubmission = () => {
-    if (selectedAnswer === questions[currentQuestion].correctAnswer) {
+    const current = questions[currentQuestion];
+    let isAnswerCorrect = false;
+
+    if (current.type === "ip" && current.correctAnswer.includes("x")) {
+      // Utilisez la fonction isValidIP pour valider les réponses de type IP.
+      isAnswerCorrect = isValidIP(selectedAnswer, current.correctAnswer, current.exclude);
+    } else {
+      // Pour les autres types de questions, continuez à utiliser la comparaison directe.
+      isAnswerCorrect = selectedAnswer === current.correctAnswer;
+    }
+
+    if (isAnswerCorrect) {
       setScore(score + 1);
     }
 
@@ -66,7 +80,11 @@ const App = () => {
   };
 
   return (
-    <div className="bg-primary min-h-screen flex justify-center items-center">
+    <div className="bg-primary min-h-screen flex justify-center items-center relative">
+      <div className="absolute top-0 left-0 m-4 flex items-center">
+        <img src={logo} alt="Logo" className="h-12" />
+        <span className="text-secondary text-lg font-bold ml-2">MADE</span>
+      </div>
       <div className="bg-secondary p-8 rounded-2xl w-1/2 flex flex-col">
         {!isQuizFinished && <Timer key={currentQuestion} duration={50} onTimeUp={handleAnswerSubmission} />}
         <h1 className="text-2xl font-bold text-center my-4">QCM TAC TPU-1 IP</h1>
@@ -87,7 +105,10 @@ const App = () => {
             </div>
           </div>
         ) : (
-          <div className="text-center flex-grow">Quiz terminé ! Votre score : {score}</div>
+          <div className="flex flex-col items-center justify-center flex-grow">
+            <div>Quiz terminé ! Votre score : {score}</div>
+            <img src={trophy} alt="Trophy" className="h-16 mt-4" />
+          </div>
         )}
 
         <div className="mt-4 text-center">{!isQuizFinished ? `${currentQuestion + 1}/${questions.length}` : ""}</div>
@@ -97,7 +118,7 @@ const App = () => {
           <>
             <Restart onRestart={restartQuiz} />
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+              className="bg-blue-500 hover:bg-blue-700 text-secondary font-bold py-2 px-4 rounded mt-4 "
               onClick={toggleAnswerDisplay}
             >
               Afficher les réponses
