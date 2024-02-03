@@ -9,7 +9,7 @@ const questions = [
     {
       question: "Veuillez saisir l'adresse IP pour se connecter à une TAC TPU-1",
       type: "ip",
-      correctAnswer: "172.16.6.20",
+      correctAnswer: "172.16.6.3",
       image:"src/assets/img/MADE44.PNG"
     },
     {

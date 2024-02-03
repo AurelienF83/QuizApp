@@ -81,16 +81,18 @@ const App = () => {
 
   return (
     <div className="bg-primary min-h-screen flex justify-center items-center relative">
-      <div className="absolute top-0 left-0 m-4 flex items-center">
+      <div className="absolute top-0 left-0 m-4">
         <img src={logo} alt="Logo" className="h-12" />
-        <span className="text-secondary text-lg font-bold ml-2">MADE</span>
       </div>
-      <div className="bg-secondary p-8 rounded-2xl w-1/2 flex flex-col">
-        {!isQuizFinished && <Timer key={currentQuestion} duration={50} onTimeUp={handleAnswerSubmission} />}
-        <h1 className="text-2xl font-bold text-center my-4">QCM TAC TPU-1 IP</h1>
+
+      <div className="bg-white p-8 rounded-2xl w-1/2 flex flex-col">
+        <div className="text-center w-full absolute top-4 left-1/2 transform -translate-x-1/2">
+          <span className="text-secondary text-lg font-bold">QCM TAC TPU-1</span>
+        </div>
+        {!isQuizFinished && <Timer key={currentQuestion} duration={120} onTimeUp={handleAnswerSubmission} />}
 
         {!isQuizFinished ? (
-          <div className="flex-grow">
+          <div className="flex-grow mt-8">
             <div className="text-center">
               <Question
                 data={questions[currentQuestion]}
@@ -106,12 +108,12 @@ const App = () => {
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center flex-grow">
-            <div>Quiz terminé ! Votre score : {score}</div>
+            <div className="text-primary text-lg font-semibold">Quiz terminé ! Votre score : {score}</div>
             <img src={trophy} alt="Trophy" className="h-16 mt-4" />
           </div>
         )}
 
-        <div className="mt-4 text-center">{!isQuizFinished ? `${currentQuestion + 1}/${questions.length}` : ""}</div>
+        <div className="mt-8 text-center">{!isQuizFinished ? `${currentQuestion + 1}/${questions.length}` : ""}</div>
         {!isQuizFinished && <ProgressBar current={currentQuestion + 1} total={questions.length} />}
 
         {isQuizFinished && (

@@ -20,10 +20,10 @@ const Question = ({ data, setSelectedAnswer, selectedAnswer }: QuestionProps) =>
 
   return (
     <div>
+      <h2 className="text-lg font-semibold">{data.question}</h2>
       <div className="flex justify-center">
         {data.image && <img src={data.image} alt={data.question} className="max-w-full h-auto" />}
       </div>
-      <h2 className="text-lg font-semibold">{data.question}</h2>
 
       {data.type === "ip" ? (
         <div className="mt-10 flex justify-center">

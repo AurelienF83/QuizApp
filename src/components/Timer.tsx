@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+import clk from "../assets/img/icons8-temps.gif";
 
 // type pour les props de Timer.
 interface TimerProps {
@@ -27,11 +28,11 @@ const Timer = ({ duration, onTimeUp }: TimerProps) => {
   }, [timeLeft, onTimeUp]); // Dépendances de l'effet : timeLeft et onTimeUp.
 
   return (
-    <div className='text-primary'>
-      Temps restant : {timeLeft} secondes
+    <div className="text-primary flex items-center">
+      <img src={clk} alt="Temps restant" className="h-7 mr-2" />
+      {timeLeft} secondes
     </div>
   );
 };
 
 export default Timer;
-
