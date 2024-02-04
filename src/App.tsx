@@ -11,6 +11,10 @@ import logo from "./assets/img/MADE44.png";
 import trophy from "./assets/img/quiz.png";
 import start from "./assets/img/icons8-jouer-48.png";
 import trophee from "./assets/img/trophee.png";
+import fb from "./assets/img/facebook.png";
+import twitter from "./assets/img/twitter.png";
+import yt from "./assets/img/youtube.png";
+import lin from "./assets/img/linkedin.png";
 
 const App = () => {
   // Déclaration des états avec useState.
@@ -83,8 +87,8 @@ const App = () => {
   };
 
   return (
-    <div className="bg-primary min-h-screen flex flex-col justify-center items-center relative">
-      <div className="absolute top-0 left-0 m-4">
+    <div className="bg-[#0c0f17] min-h-screen flex flex-col justify-center items-center relative">
+      <div className="absolute top-0 m-4">
         <img src={logo} alt="Logo" className="h-12" />
       </div>
 
@@ -95,22 +99,52 @@ const App = () => {
       )}
 
       {!quizStarted ? (
-        <div className="flex flex-col h-[400px] w-[800px] rounded-2xl bg-gray-950 shadow-2xl items-center justify-start pt-8">
-          <span className="text-secondary text-lg font-bold">QCM TAC TPU-1</span>
-          <img src={trophee} alt="Logo" className="h-14 mt-14" />
+        <div className="flex flex-col h-[400px] w-[800px] rounded-2xl bg-gray-900 shadow-2xl items-center justify-start pt-4">
+          <span className="text-secondary text-xl font-bold">QCM TAC TPU-1</span>
+          <img src={trophee} alt="Logo" className="h-16 mt-12" />
           <div className="flex-grow flex flex-col items-center justify-center">
             <p className="text-secondary text-lg animate-pulse">Cliquez pour commencer</p>
             <button
-              className="animate-pulse bg-secondary rounded-full h-16 w-16 flex items-center justify-center transform transition-transform hover:scale-110 mt-4"
+              className="animate-pulse bg-secondary rounded-lg flex items-center justify-center transform transition-transform hover:scale-110 px-6 py-2 shadow-lg shadow-secondary/40 my-4"
               onClick={() => setQuizStarted(true)}
             >
               <img src={start} alt="Start" className="w-8 h-8" />
             </button>
           </div>
+          <div className="flex space-x-4 mb-4">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <img
+                src={fb}
+                alt="Facebook"
+                className="w-7 h-7 cursor-pointer transition duration-200 ease-in-out hover:scale-110"
+              />
+            </a>
+            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+              <img
+                src={twitter}
+                alt="Twitter"
+                className="w-7 h-7 cursor-pointer transition duration-200 ease-in-out hover:scale-110"
+              />
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+              <img
+                src={yt}
+                alt="Youtube"
+                className="w-7 h-7 cursor-pointer transition duration-200 ease-in-out hover:scale-110"
+              />
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+              <img
+                src={lin}
+                alt="Linkedin"
+                className="w-7 h-7 cursor-pointer transition duration-200 ease-in-out hover:scale-110"
+              />
+            </a>
+          </div>
         </div>
       ) : (
-        <div className="bg-white p-8 rounded-2xl w-1/2 flex flex-col">
-          {!isQuizFinished && <Timer key={currentQuestion} duration={120} onTimeUp={handleAnswerSubmission} />}
+        <div className="bg-white p-8 rounded-2xl max-w-4xl w-3/4 flex flex-col">
+          {!isQuizFinished && <Timer key={currentQuestion} duration={300} onTimeUp={handleAnswerSubmission} />}
           {!isQuizFinished ? (
             <div className="flex-grow mt-8">
               <div className="text-center">
