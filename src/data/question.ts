@@ -1,16 +1,18 @@
+import q1 from "../assets/img/MADE44.png"
+
 const questions = [
     {
       question: "Configurez l'adresse IP de votre PC afin de pouvoir vous connecter à une TAC TPU-1",
       type: "ip",
       correctAnswer: "172.16.6.x",
-      image:"src/assets/img/MADE44.PNG",
+      image: q1,
       exclude: [3],
     },
     {
       question: "Veuillez saisir l'adresse IP pour se connecter à une TAC TPU-1",
       type: "ip",
       correctAnswer: "172.16.6.3",
-      image:"src/assets/img/MADE44.PNG"
+      image:q1
     },
     {
       question: "Sur quelles bornes d'IPTU peut-on câbler les Entrées",
