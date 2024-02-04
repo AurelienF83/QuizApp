@@ -10,6 +10,7 @@ import { isValidIP } from "./data/utils";
 import logo from "./assets/img/MADE44.png";
 import trophy from "./assets/img/quiz.png";
 import start from "./assets/img/icons8-jouer-48.png";
+import trophee from "./assets/img/trophee.png";
 
 const App = () => {
   // Déclaration des états avec useState.
@@ -82,28 +83,34 @@ const App = () => {
   };
 
   return (
-    <div className="bg-primary min-h-screen flex justify-center items-center relative">
+    <div className="bg-primary min-h-screen flex flex-col justify-center items-center relative">
       <div className="absolute top-0 left-0 m-4">
         <img src={logo} alt="Logo" className="h-12" />
       </div>
-      <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
-        <span className="text-secondary text-lg font-bold">QCM TAC TPU-1</span>
-      </div>
+
+      {quizStarted && (
+        <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
+          <span className="text-secondary text-lg font-bold">QCM TAC TPU-1</span>
+        </div>
+      )}
+
       {!quizStarted ? (
-        <div className="flex flex-col items-center justify-center p-40 text-secondary rounded-2xl border border-secondary/75">
-          <p className="mb-4 text-lg animate-pulse">Cliquez pour commencer</p>
-          <button
-            className="animate-pulse bg-secondary rounded-full h-16 w-16 flex items-center justify-center transform transition-transform hover:scale-110"
-            onClick={() => setQuizStarted(true)}
-          >
-            <img src={start} alt="Start" className="w-8 h-8" />
-          </button>
+        <div className="flex flex-col h-[400px] w-[800px] rounded-2xl bg-gray-950 shadow-2xl items-center justify-start pt-8">
+          <span className="text-secondary text-lg font-bold">QCM TAC TPU-1</span>
+          <img src={trophee} alt="Logo" className="h-14 mt-14" />
+          <div className="flex-grow flex flex-col items-center justify-center">
+            <p className="text-secondary text-lg animate-pulse">Cliquez pour commencer</p>
+            <button
+              className="animate-pulse bg-secondary rounded-full h-16 w-16 flex items-center justify-center transform transition-transform hover:scale-110 mt-4"
+              onClick={() => setQuizStarted(true)}
+            >
+              <img src={start} alt="Start" className="w-8 h-8" />
+            </button>
+          </div>
         </div>
       ) : (
         <div className="bg-white p-8 rounded-2xl w-1/2 flex flex-col">
-          <div className="text-center w-full absolute top-4 left-1/2 transform -translate-x-1/2"></div>
           {!isQuizFinished && <Timer key={currentQuestion} duration={120} onTimeUp={handleAnswerSubmission} />}
-
           {!isQuizFinished ? (
             <div className="flex-grow mt-8">
               <div className="text-center">
@@ -121,14 +128,13 @@ const App = () => {
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center flex-grow">
-              <div className="text-primary text-lg font-semibold">Quiz terminé ! Votre score : {score}</div>
+              <div className="text-primary text-lg font-semibold">Quiz terminé ! Votre score : {score}/10</div>
               <img src={trophy} alt="Trophy" className="h-20 mt-4" />
             </div>
           )}
 
           <div className="mt-8 text-center">{!isQuizFinished ? `${currentQuestion + 1}/${questions.length}` : ""}</div>
           {!isQuizFinished && <ProgressBar current={currentQuestion + 1} total={questions.length} />}
-
           {isQuizFinished && (
             <>
               <Restart onRestart={restartQuiz} />
