@@ -1,4 +1,6 @@
-import q1 from "../assets/img/MADE44.png"
+import q1 from "../assets/img/ippc.png"
+import q2 from "../assets/img/navip.png"
+import q3 from "../assets/img/IPTU.png"
 
 const questions = [
     {
@@ -12,12 +14,13 @@ const questions = [
       question: "Veuillez saisir l'adresse IP pour se connecter à une TAC TPU-1",
       type: "ip",
       correctAnswer: "172.16.6.3",
-      image:q1
+      image:q2
     },
     {
       question: "Sur quelles bornes d'IPTU peut-on câbler les Entrées",
       options: ["1-2 et 3-4", "5-6 et 7-8", "9-10 et 11-12", "9-11 et 13-14"],
       correctAnswer: "1-2 et 3-4",
+      image:q3
     },
     {
       question: "Sur quelles bornes d'IPTU peut-on câbler les Sorties",

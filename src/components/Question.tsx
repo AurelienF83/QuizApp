@@ -22,11 +22,11 @@ const Question = ({ data, setSelectedAnswer, selectedAnswer }: QuestionProps) =>
     <div>
       <h2 className="text-lg font-semibold">{data.question}</h2>
       <div className="flex justify-center">
-        {data.image && <img src={data.image} alt={data.question} className="max-w-full h-auto" />}
+        {data.image && <img src={data.image} alt={data.question} className="mt-1 max-w-full h-auto max-h-82" />}
       </div>
 
       {data.type === "ip" ? (
-        <div className="mt-10 flex justify-center">
+        <div className="mt-8 flex justify-center">
           <div className="text-left">
             <label htmlFor="ipAddress" className="block text-sm font-medium text-primary">
               IP Address
@@ -42,15 +42,17 @@ const Question = ({ data, setSelectedAnswer, selectedAnswer }: QuestionProps) =>
           </div>
         </div>
       ) : (
-        <div className="flex flex-col space-y-3 mt-8 ml-28">
+        <div className="mt-8 ml-28 space-y-3 columns-2">
           {data.options?.map((option, index) => (
-            <label key={index} className="flex items-center">
-              <div onClick={() => setSelectedAnswer(option)} className="flex items-center space-x-2 cursor-pointer">
-                <div
-                  className={`w-4 h-4 rounded-sm border-2 ${selectedAnswer === option ? "bg-primary" : "bg-secondary"}`}
-                ></div>
-                <span className="select-none">{option}</span>
-              </div>
+            <label
+              key={index}
+              className="flex items-center space-x-2 cursor-pointer"
+              onClick={() => setSelectedAnswer(option)}
+            >
+              <div
+                className={`w-4 h-4 rounded-sm border-2 ${selectedAnswer === option ? "bg-primary" : "bg-secondary"}`}
+              ></div>
+              <span className="select-none">{option}</span>
             </label>
           ))}
         </div>

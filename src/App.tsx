@@ -146,7 +146,7 @@ const App = () => {
         <div className="bg-white p-8 rounded-2xl max-w-4xl w-3/4 flex flex-col">
           {!isQuizFinished && <Timer key={currentQuestion} duration={300} onTimeUp={handleAnswerSubmission} />}
           {!isQuizFinished ? (
-            <div className="flex-grow mt-8">
+            <div className="flex-grow mt-4">
               <div className="text-center">
                 <Question
                   data={questions[currentQuestion]}
@@ -154,7 +154,7 @@ const App = () => {
                   selectedAnswer={selectedAnswer}
                 />
               </div>
-              <div className="text-center mt-8">
+              <div className="text-center mt-4">
                 <Button variant="default" className="font-bold py-2 px-4 " onClick={handleAnswerSubmission}>
                   Valider
                 </Button>
@@ -167,7 +167,7 @@ const App = () => {
             </div>
           )}
 
-          <div className="mt-8 text-center">{!isQuizFinished ? `${currentQuestion + 1}/${questions.length}` : ""}</div>
+          <div className="mt-4 text-center">{!isQuizFinished ? `${currentQuestion + 1}/${questions.length}` : ""}</div>
           {!isQuizFinished && <ProgressBar current={currentQuestion + 1} total={questions.length} />}
           {isQuizFinished && (
             <>
