@@ -42,11 +42,11 @@ const Question = ({ data, setSelectedAnswer, selectedAnswer }: QuestionProps) =>
           </div>
         </div>
       ) : (
-        <div className="mt-8 ml-28 space-y-3 columns-2">
+        <div className="mt-8 mx-auto space-y-3 columns-2 max-w-xl">
           {data.options?.map((option, index) => (
             <label
               key={index}
-              className="flex items-center space-x-2 cursor-pointer"
+              className="flex items-center space-x-2 cursor-pointer border border-bg-primary p-2 rounded-md hover:bg-gray-100"
               onClick={() => setSelectedAnswer(option)}
             >
               <div
