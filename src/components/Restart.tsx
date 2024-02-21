@@ -1,12 +1,12 @@
 // type pour les props de Restart.
 interface RestartProps {
-  onRestart: () => void; // Fonction à exécuter lorsque le bouton est cliqué.
+  onRestart: () => void;
 }
 
-// Déclaration du composant Restart en typant directement les props avec l'interface RestartProps.
+// Composant reset du QCM
 const Restart = ({ onRestart }: RestartProps) => {
   return (
-    // Bouton qui, lorsqu'il est cliqué, déclenche la fonction onRestart.
+    // Bouton restart du QCM
     <button
       className="bg-primary hover:bg-gray-700 text-secondary font-bold py-2 px-4 rounded mt-4"
       onClick={onRestart}

@@ -16,8 +16,6 @@ const Question = ({ data, setSelectedAnswer, selectedAnswer }: QuestionProps) =>
     setSelectedAnswer(event.target.value);
   };
 
-  // Ajouter une fonction pour gérer la validation lors de la soumission ou du changement
-
   return (
     <div>
       <h2 className="text-lg font-semibold">{data.question}</h2>
@@ -33,7 +31,7 @@ const Question = ({ data, setSelectedAnswer, selectedAnswer }: QuestionProps) =>
             </label>
             <input
               id="ipAddress"
-              type="text" // Modifier pour "text" car "ip" n'est pas un type valide
+              type="text"
               value={selectedAnswer}
               onChange={handleChange}
               className="mt-0.5 p-2 border rounded"

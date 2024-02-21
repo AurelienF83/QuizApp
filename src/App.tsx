@@ -33,10 +33,10 @@ const App = () => {
     let isAnswerCorrect = false;
 
     if (current.type === "ip" && current.correctAnswer.includes("x")) {
-      // Utilisez la fonction isValidIP pour valider les réponses de type IP.
+      // Fonction isValidIP pour valider les réponses de type IP.
       isAnswerCorrect = isValidIP(selectedAnswer, current.correctAnswer, current.exclude);
     } else {
-      // Pour les autres types de questions, continuez à utiliser la comparaison directe.
+      // Pour les autres types de questions, rester en fonctionnement normal
       isAnswerCorrect = selectedAnswer === current.correctAnswer;
     }
 

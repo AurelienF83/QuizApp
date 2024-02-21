@@ -8,7 +8,7 @@ interface AnswerProps {
   onNext: () => void;
 }
 
-// Déclaration du composant fonctionnel avec typage direct des props
+// Composant affichage question + reponse + bonne reponse
 const Answer = ({ question, givenAnswer, onPrevious, onNext }: AnswerProps) => {
   return (
     <div>
