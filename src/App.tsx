@@ -92,11 +92,7 @@ const App = () => {
         <img src={logo} alt="Logo" className="h-12" />
       </div>
 
-      {quizStarted && (
-        <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
-          <span className="text-secondary text-lg font-bold">QCM TAC TPU-1</span>
-        </div>
-      )}
+      {quizStarted && <div className="absolute top-4 left-1/2 transform -translate-x-1/2"></div>}
 
       {!quizStarted ? (
         <div className="flex flex-col h-[400px] w-[800px] rounded-2xl bg-gray-900 shadow-2xl items-center justify-start pt-4">
