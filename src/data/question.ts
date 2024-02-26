@@ -41,7 +41,7 @@ const questions = [
     },
     {
       question: "Une TAC est équipée d'une carte d'alimentation ATPU00 (48Vcc). Quelle modification doit-on réaliser si on souhaite l'alimenter en 127Vcc ?",
-      options: ["Déplacer un cavalier sur 127Vcc", "Rien, la carte est compatible 48Vcc et 127Vcc", "Changer la carte pour une ATPU0.1", "Se câbler sur le connecteur RTC"],
+      options: ["Rien, la carte est compatible 48Vcc et 127Vcc","Déplacer un cavalier sur 127Vcc", "Changer la carte pour une ATPU0.1", "Se câbler sur le connecteur RTC"],
       correctAnswer: "Changer la carte pour une ATPU0.1",
       image:q4
     },
