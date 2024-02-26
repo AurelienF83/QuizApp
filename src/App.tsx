@@ -140,7 +140,7 @@ const App = () => {
         </div>
       ) : (
         <div className="bg-white p-8 rounded-2xl max-w-4xl w-3/4 flex flex-col">
-          {!isQuizFinished && <Timer key={currentQuestion} duration={300} onTimeUp={handleAnswerSubmission} />}
+          {!isQuizFinished && <Timer key={currentQuestion} duration={600} onTimeUp={handleAnswerSubmission} />}
           {!isQuizFinished ? (
             <div className="flex-grow mt-4">
               <div className="text-center">

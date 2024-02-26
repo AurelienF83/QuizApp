@@ -46,7 +46,7 @@ const questions = [
       image:q4
     },
     {
-      question: "Quel est la fonction de la carte MWTU ?",
+      question: "Quelle est la fonction de la carte MWTU ?",
       options: ["Communiquer sur un lien IP", "Communiquer sur un lien FO", "Configurer l'équipement", "Alimenter la carte en 127Vcc"],
       correctAnswer: "Configurer l'équipement",
       image:q5
