@@ -108,7 +108,7 @@ const App = () => {
             </button>
           </div>
           <div className="flex space-x-4 mb-4">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/madeofficiel/" target="_blank" rel="noopener noreferrer">
               <img
                 src={fb}
                 alt="Facebook"
@@ -122,14 +122,18 @@ const App = () => {
                 className="w-7 h-7 cursor-pointer transition duration-200 ease-in-out hover:scale-110"
               />
             </a>
-            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.youtube.com/channel/UClT3pgvhFnR00Ot46j8TQPA"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 src={yt}
                 alt="Youtube"
                 className="w-7 h-7 cursor-pointer transition duration-200 ease-in-out hover:scale-110"
               />
             </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://fr.linkedin.com/company/made-sa" target="_blank" rel="noopener noreferrer">
               <img
                 src={lin}
                 alt="Linkedin"
